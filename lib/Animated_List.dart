@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class PantallaCinco extends StatefulWidget {
-  const PantallaCinco({Key? key}) : super(key: key);
+class ListaAnimada extends StatefulWidget {
+  const ListaAnimada({Key? key}) : super(key: key);
 
   @override
-  State<PantallaCinco> createState() => _PantallaCincoState();
+  State<ListaAnimada> createState() => _ListaAnimadaState();
 }
 
-class _PantallaCincoState extends State<PantallaCinco> {
+class _ListaAnimadaState extends State<ListaAnimada> {
   final _items = [];
   final GlobalKey<AnimatedListState> _key = GlobalKey();
 
   void _addItem() {
-    _items.insert(0, "Item ${_items.length + 1}");
+    _items.insert(0, "Elemento ${_items.length + 1}");
     _key.currentState!.insertItem(
       0,
       duration: const Duration(seconds: 1),
@@ -30,7 +30,7 @@ class _PantallaCincoState extends State<PantallaCinco> {
             color: Colors.red,
             child: ListTile(
               title: Text(
-                "Deleted",
+                "Borrado",
                 style: TextStyle(fontSize: 24),
               ),
             ),
@@ -47,12 +47,12 @@ class _PantallaCincoState extends State<PantallaCinco> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Pantalla 5",
+          "Lista Animada",
           style: TextStyle(
               color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: Color(0xffbb9c00),
+        backgroundColor: Colors.cyan,
       ),
       body: Column(
         children: [
@@ -97,7 +97,7 @@ class _PantallaCincoState extends State<PantallaCinco> {
               },
               child: const Text("Regresar"),
             ),
-          )
+          ),
         ],
       ),
     );
